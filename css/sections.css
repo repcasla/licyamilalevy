@@ -1,0 +1,112 @@
+/* ==========================================================================
+   SECCIONES: header, hero, bloques de contenido y footer
+   ========================================================================== */
+
+/* ---- Header ---- */
+.site-header {
+  position: sticky; top: 0; z-index: 100; height: var(--header-h);
+  background: rgba(250, 248, 247, 0.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent; transition: border-color .2s var(--ease);
+}
+.site-header.is-scrolled { border-bottom-color: var(--color-line); }
+.header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.nav { display: flex; align-items: center; gap: var(--space-5); }
+.nav__list { display: flex; gap: var(--space-5); }
+.nav__list a { color: var(--color-text); text-decoration: none; font-size: var(--fs-300); font-weight: 500; }
+.nav__list a:hover { color: var(--color-primary-deep); }
+.nav-toggle { display: none; }
+
+/* ---- Hero ---- */
+.hero { padding: var(--space-8) 0 var(--space-7); }
+.hero__grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-7); align-items: center; }
+.hero__title { font-size: var(--fs-800); font-weight: 700; letter-spacing: -0.01em; margin-bottom: var(--space-5); }
+.hero__lead { font-size: var(--fs-500); color: #4A4A4A; }
+/* Única animación de entrada de la página */
+.hero__copy, .contact-card { animation: heroIn .7s var(--ease) both; }
+.contact-card { animation-delay: .12s; }
+@keyframes heroIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.contact-card {
+  background: var(--color-white); border: 1px solid var(--color-line);
+  border-top: 5px solid var(--color-primary);
+  border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-soft);
+}
+.contact-card__title { font-size: var(--fs-600); margin-bottom: var(--space-2); }
+.contact-card__text { font-size: var(--fs-300); }
+.contact-card__actions { display: grid; gap: var(--space-3); }
+.contact-card__status { margin: var(--space-4) 0 0; font-size: var(--fs-300); color: var(--color-secondary-deep); font-weight: 500; }
+
+/* ---- Secciones genéricas ---- */
+.section { padding: var(--space-8) 0; }
+.section--tint { background: var(--color-tint); }
+.section__head { margin-bottom: var(--space-6); }
+.section__title { font-size: var(--fs-700); }
+.section__lead { font-size: var(--fs-500); color: #4A4A4A; }
+
+/* ---- Para quién ---- */
+.audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+.audience-card { display: flex; flex-direction: column; align-items: flex-start; padding: var(--space-6) var(--space-5); border-radius: var(--radius-md); }
+.audience-card--rose { background: var(--color-primary-soft); }
+.audience-card--sage { background: var(--color-secondary-soft); }
+.audience-card p { font-size: var(--fs-300); flex: 1; }
+.audience-card .link-arrow { color: var(--color-text); }
+
+/* ---- Qué es el piso pélvico ---- */
+.knowledge { position: relative; overflow: hidden; }
+.knowledge__deco { position: absolute; right: -40px; top: 50%; width: 460px; transform: translateY(-50%) rotate(-8deg); opacity: 0.1; pointer-events: none; }
+.knowledge__grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-7); align-items: start; }
+.knowledge__why { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-md); padding: var(--space-6); }
+.knowledge__why-title { font-size: var(--fs-600); }
+.knowledge__note { margin: var(--space-5) 0 0; padding-top: var(--space-4); border-top: 1px solid var(--color-line); font-weight: 500; }
+
+/* ---- Sobre mí: foto centrada y datos debajo ---- */
+.about__inner { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.about__photo { margin: 0 0 var(--space-6); width: min(100%, 320px); aspect-ratio: 4 / 5; position: relative; }
+.about__photo::before { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--color-secondary); border-radius: 999px 999px var(--radius-md) var(--radius-md); }
+.about__photo img { position: relative; width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; border-radius: 999px 999px var(--radius-md) var(--radius-md); }
+.about__name { font-size: var(--fs-700); margin-bottom: var(--space-2); }
+.about__role { font-size: var(--fs-500); margin: 0 auto var(--space-1); color: var(--color-primary-deep); font-weight: 500; }
+.about__license { font-size: var(--fs-300); margin: 0 auto var(--space-5); }
+.about__text { max-width: 60ch; }
+.about__text p { margin-inline: auto; }
+.about__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); margin-top: var(--space-4); }
+
+/* ---- Pasos (secuencia real) ---- */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); counter-reset: step; }
+.step { position: relative; padding-top: var(--space-2); }
+.step__num {
+  display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: var(--space-4);
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;
+  color: var(--color-ink-on-primary); background: var(--color-primary); border-radius: 50%;
+}
+.step p { font-size: var(--fs-300); }
+
+/* ---- Horarios y consultorios ---- */
+.places-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--space-5); }
+.hours { width: 100%; border-collapse: collapse; }
+.hours th, .hours td { padding: var(--space-3) var(--space-3); text-align: left; border-bottom: 1px solid var(--color-line); font-size: var(--fs-400); }
+.hours th { font-weight: 500; }
+.hours td { text-align: right; }
+.hours tr.is-today { background: var(--color-secondary-soft); }
+.hours tr.is-today th::after { content: "Hoy"; margin-left: var(--space-2); padding: 1px 8px; font-size: 0.75rem; background: var(--color-secondary); color: #1F2E25; border-radius: var(--radius-pill); }
+.place-list { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.place h4 { font-size: var(--fs-500); margin-bottom: var(--space-2); }
+.place p { margin-bottom: var(--space-1); }
+.place__zone { font-size: var(--fs-300); color: var(--color-secondary-deep); font-weight: 500; margin-bottom: var(--space-3) !important; }
+
+/* ---- Colegas ---- */
+.colleagues { background: var(--color-secondary-soft); padding: var(--space-7) 0; }
+.colleagues__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); }
+.colleagues .section__title { font-size: var(--fs-600); }
+.colleagues p { margin-bottom: 0; }
+
+/* ---- Contacto ---- */
+.contact__deco { width: min(100%, 260px); margin-top: var(--space-6); opacity: 0.85; }
+.contact__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--space-7); align-items: start; }
+
+/* ---- Footer ---- */
+.site-footer { padding: var(--space-7) 0 var(--space-6); border-top: 1px solid var(--color-line); }
+.footer__inner { display: grid; gap: var(--space-5); justify-items: center; text-align: center; }
+.footer__links { display: flex; gap: var(--space-5); }
+.footer__links a { color: var(--color-text); font-weight: 500; }
+.footer__copy { font-size: 0.8125rem; margin: 0; }

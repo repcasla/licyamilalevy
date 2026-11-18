@@ -1,0 +1,94 @@
+/* ==========================================================================
+   COMPONENTES reutilizables: marca, botones, chips, cards, formulario
+   ========================================================================== */
+
+/* ---- Marca (logo + nombre) ---- */
+.brand { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; color: var(--color-text); }
+.brand__logo { width: 44px; height: 44px; }
+.brand__text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand__name { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; }
+.brand__role { font-size: 0.75rem; color: var(--color-primary-deep); }
+
+/* ---- Botones ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: 48px; padding: 0.7rem 1.4rem;
+  font: 500 var(--fs-400)/1.2 var(--font-body);
+  text-decoration: none; text-align: center;
+  border: 2px solid transparent; border-radius: var(--radius-pill);
+  cursor: pointer; transition: background-color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.btn:active { transform: scale(0.98); }
+.btn--block { width: 100%; }
+.btn--sm { min-height: 40px; padding: 0.45rem 1.1rem; font-size: var(--fs-300); }
+
+.btn--primary { background: var(--color-primary); color: var(--color-ink-on-primary); }
+.btn--primary:hover { background: #BC7E99; }
+.btn--whatsapp { background: var(--color-secondary); color: #1F2E25; }
+.btn--whatsapp:hover { background: #97B6A5; }
+.btn--outline { background: transparent; border-color: var(--color-primary); color: var(--color-primary-deep); }
+.btn--outline:hover { background: var(--color-primary-soft); }
+.btn--ghost { background: transparent; color: var(--color-text); }
+.btn--ghost:hover { background: rgba(200, 142, 167, 0.14); }
+
+/* ---- Chips ---- */
+.chips { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
+.chip {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 0.4rem 0.9rem; font-size: var(--fs-300);
+  background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-pill);
+}
+.chip .icon { color: var(--color-secondary-deep); }
+
+/* ---- Link con flecha ---- */
+.link-arrow { font-weight: 500; font-size: var(--fs-300); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+.link-arrow::after { content: " →"; }
+.link-arrow:hover { color: var(--color-text); }
+
+/* ---- Lista con tildes ---- */
+.check-list { display: grid; gap: var(--space-3); }
+.check-list li { display: flex; gap: var(--space-3); align-items: flex-start; }
+.check-list .icon { margin-top: 0.3em; color: var(--color-secondary-deep); background: var(--color-secondary-soft); border-radius: 50%; padding: 3px; width: 1.5em; height: 1.5em; }
+
+/* ---- Panel genérico ---- */
+.panel { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-md); padding: var(--space-6); }
+.panel__title { display: flex; align-items: center; gap: var(--space-3); font-size: var(--fs-600); }
+.panel__title .icon { color: var(--color-primary-deep); }
+.panel__note { font-size: var(--fs-300); margin: var(--space-4) 0 0; }
+
+/* ---- Formulario ---- */
+.form { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-md); padding: var(--space-6); box-shadow: var(--shadow-soft); }
+.field { margin: 0 0 var(--space-4); padding: 0; border: 0; }
+.field label, .field legend { display: block; font-weight: 500; font-size: var(--fs-300); margin-bottom: var(--space-2); padding: 0; }
+.optional { font-weight: 400; color: #6B6B6B; }
+.field input[type="text"], .field input[type="tel"], .field select, .field textarea {
+  width: 100%; min-height: 48px; padding: 0.7rem 0.9rem;
+  font: inherit; color: var(--color-text); background: var(--color-bg);
+  border: 1.5px solid var(--color-line); border-radius: var(--radius-sm);
+}
+.field textarea { resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--color-primary-deep); box-shadow: 0 0 0 3px rgba(200, 142, 167, 0.35); }
+.field.is-invalid input, .field.is-invalid select { border-color: var(--color-error); }
+.field__error { color: var(--color-error); font-size: var(--fs-300); margin: var(--space-2) 0 0; min-height: 0; }
+.field__error:empty { display: none; }
+
+.field--radios { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); align-items: center; }
+.field--radios legend { width: 100%; }
+.radio { display: inline-flex !important; align-items: center; gap: var(--space-2); font-weight: 400 !important; font-size: var(--fs-400) !important; margin: 0 !important; cursor: pointer; min-height: 44px; }
+.radio input { accent-color: var(--color-primary-deep); width: 1.15rem; height: 1.15rem; }
+
+.form__note { font-size: 0.8125rem; margin: var(--space-3) 0 0; color: #5E5E5E; }
+.form__status { margin: var(--space-3) 0 0; font-size: var(--fs-300); font-weight: 500; color: var(--color-secondary-deep); }
+.form__status:empty { display: none; }
+
+/* ---- Botón flotante WhatsApp ---- */
+.fab {
+  position: fixed; right: var(--space-4); bottom: var(--space-4); z-index: 90;
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: 52px; padding: 0 1.2rem;
+  background: var(--color-secondary); color: #1F2E25; font-weight: 500; text-decoration: none;
+  border-radius: var(--radius-pill); box-shadow: 0 10px 26px -10px rgba(40, 60, 48, 0.55);
+  opacity: 0; transform: translateY(16px); pointer-events: none;
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+}
+.fab.is-visible { opacity: 1; transform: none; pointer-events: auto; }

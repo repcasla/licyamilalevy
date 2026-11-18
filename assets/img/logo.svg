@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Pelvis minimalista en línea continua -->
+  <path d="M6 22C9 12 22 11 28 20C30 23 31 26 32 30C33 26 34 23 36 20C42 11 55 12 58 22C60 31 54 40 46 42C42 43 40 46 38 50C36 55 28 55 26 50C24 46 22 43 18 42C10 40 4 31 6 22Z" stroke="#C88EA7" stroke-width="2.6"/>
+  <path d="M23 27C27 34 37 34 41 27" stroke="#A8C3B1" stroke-width="2.6"/>
+  <path d="M32 30V40" stroke="#A8C3B1" stroke-width="2.6"/>
+</svg>

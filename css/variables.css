@@ -1,0 +1,55 @@
+/* ==========================================================================
+   VARIABLES: tokens de diseño. Cambiar acá modifica toda la página.
+   ========================================================================== */
+:root {
+  /* Paleta de marca */
+  --color-bg: #FAF8F7;          /* Fondo */
+  --color-primary: #C88EA7;     /* Rosa empolvado */
+  --color-secondary: #A8C3B1;   /* Verde salvia */
+  --color-text: #3D3D3D;        /* Texto */
+
+  /* Derivados (mantienen la paleta pero con contraste legible) */
+  --color-primary-deep: #9A5B78;   /* Rosa oscuro: texto/links sobre fondo claro */
+  --color-primary-soft: #F3E4EA;   /* Rosa muy claro: fondos suaves */
+  --color-secondary-soft: #E6EEE9; /* Salvia muy claro: fondos suaves */
+  --color-secondary-deep: #55735F; /* Salvia oscuro: texto sobre fondo claro */
+  --color-tint: #F4EEEC;           /* Fondo alternativo de secciones */
+  --color-ink-on-primary: #2B2326; /* Texto sobre botones rosas */
+  --color-line: #E7DEDB;           /* Bordes sutiles */
+  --color-white: #FFFFFF;
+  --color-error: #A63D4F;
+  --color-whatsapp: #A8C3B1;       /* El botón de WhatsApp usa la salvia de marca */
+
+  /* Tipografía */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-700: clamp(1.6rem, 1.3rem + 1.4vw, 2.25rem);
+  --fs-800: clamp(2.1rem, 1.5rem + 3vw, 3.5rem);
+
+  /* Espaciado */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 5rem;
+
+  /* Forma */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 12px 32px -18px rgba(90, 50, 70, 0.35);
+
+  /* Layout */
+  --container: 1120px;
+  --header-h: 68px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
